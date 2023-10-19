@@ -27,7 +27,7 @@ function getPlaylist(url) {
   const regex = /[&?]list=([^&]+)/i
   const match = url.match(regex)
   const playlistId = match ? match[1] : ""
-  const API_KEY = "AIzaSyCPAO_b_h1shtFFkIjaAJduaNq2vN_dvvk"
+  const API_KEY = "<api_key>"
   const baseUrl = "https://www.googleapis.com/youtube/v3/"
   let html = ""
 
