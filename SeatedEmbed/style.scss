@@ -1,0 +1,26 @@
+.wrapper {
+  #seated-55fdf2c0 {
+    .seated-events-table {
+      border-top: none;
+
+      // row = item
+      .seated-event-row {
+        border-bottom: none;
+
+        .seated-event-description-cells {
+          .seated-event-date-cell {}
+
+          .seated-event-venue-cell {
+            .seated-event-venue-name {}
+
+            .seated-event-venue-location {}
+          }
+
+          .seated-event-details-cell {}
+        }
+
+        a.seated-event-link {}
+      }
+    }
+  }
+}
