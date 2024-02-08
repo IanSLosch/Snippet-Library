@@ -3,17 +3,19 @@
   top: 0;
   right: 0;
 
-  .hamburger {
+  .mobile-menu-icon {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 35px;
-    height: 40px;
     pointer-events: all;
     cursor: pointer;
     position: relative;
     z-index: 30;
+
+    // ICON SIZE
+    width: 35px;
+    height: 40px;
 
     @media screen and (min-width: 1101px) {
       display: none;
