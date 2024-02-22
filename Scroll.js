@@ -1,5 +1,5 @@
   // Scroll
-  $('.scroll').on('click', function (e) {
+  $('a[href^="#"]').on('click', function (e) {
     e.preventDefault();
 
     const href = $(this).attr('href');
@@ -17,9 +17,11 @@
 
   // or
 
-  $('.scroll').on('click', function (e) {
+  $('a[href^="#"]').on('click', function (e) {
     e.preventDefault();
 
     var aid = $(this).attr("href");
     $('html,body').animate({scrollTop: $(aid).offset().top},'slow');
   })
+
+  

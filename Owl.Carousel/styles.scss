@@ -1,52 +1,86 @@
+// VIDEO CAROUSEL
 #video-carousel {
-  padding: 0 rems(50) rems(20);
+  position: relative;
+  
+  // Item
+  .item {}
 
+  .owl-stage-outer {
+    .owl-nav {
+
+      // Nav Buttons
+      button {
+        color: $color-black;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &.owl-prev {
+          left: rems(15);
+        }
+
+        &.owl-next {
+          right: rems(15);
+        }
+
+        .arrow {
+          i {
+            font-size: rems(43);
+
+            @include hover-focus {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// MUSIC CAROUSEL
+#music-carousel {
+  position: relative;
+  
+  // Item
   .item {
-    .embed-container {
-      iframe {}
+    .cover {
+      img {}
+    }
+    .info {
+      .release {}
+      .title {}
+      .btn {}
     }
   }
 
+  .owl-stage-outer {
+    .owl-nav {
 
-  // Carousel
-  .owl-custom-nav-prev i {
-    transition: all .2s ease-in-out;
-  }
+      // Nav Buttons
+      button {
+        color: $color-black;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
 
-  .owl-custom-nav-prev i:hover {
-    transform: scale(1.1);
-  }
+        &.owl-prev {
+          left: rems(15);
+        }
 
-  .owl-custom-nav-next i {
-    transition: all .2s ease-in-out;
-  }
+        &.owl-next {
+          right: rems(15);
+        }
 
-  .owl-custom-nav-next i:hover {
-    transform: scale(1.1);
-  }
+        .arrow {
+          i {
+            font-size: rems(43);
 
-  .owl-prev {
-    color: $black;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: rems(15);
-
-    i {
-      font-size: rems(43);
+            @include hover-focus {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
     }
   }
-
-  .owl-next {
-    color: $black;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: rems(15);
-
-    i {
-      font-size: rems(43);
-    }
-  }
-
 }

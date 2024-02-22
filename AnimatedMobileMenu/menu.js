@@ -1,12 +1,14 @@
-  // MOBILE MENU
-  $('.mobile-menu-icon').on('click', function () {
-    $("#menu-to-toggle").toggleClass('active')
-    $(".line").toggleClass('active')
-  })
+// MOBILE MENU
+$('.mobile-menu-icon').on('click', function () {
+  $("#nav-menu").toggleClass('active')
+  $("header").toggleClass('active')
+  $(".line").toggleClass('active')
+})
 
-  $('.nav-button').on('click', function () {
-    if ($('#menu-to-toggle').hasClass('active')) {
-      $("#menu-to-toggle)").toggleClass('active')
-      $(".line").toggleClass('active')
-    }
-  })
+$('.nav-button').on('click', function () {
+  if ($('#nav-menu').hasClass('active')) {
+    $("#nav-menu").toggleClass('active')
+    $("header").toggleClass('active')
+    $(".line").toggleClass('active')
+  }
+})

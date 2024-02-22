@@ -2,26 +2,19 @@ ul.social {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: rems(12);
-
-  @media screen and (max-width: 1100px) {
-    display: block;
-  }
+  gap: rems(10);
+  padding: 0;
+  margin: 0;
 
   li {
     a {
-      display: block;
-      max-width: rems(20);
       transition: all .3s ease-in-out;
 
       @include hover-focus {
         transform: scale(1.2);
       }
 
-      @media screen and (max-width: 1100px) {
-        width: rems(45);
-        height: rems(45);
-      }
+      i {}
     }
   }
 }
