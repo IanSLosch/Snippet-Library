@@ -24,4 +24,17 @@
     $('html,body').animate({scrollTop: $(aid).offset().top},'slow');
   })
 
+
+  // or (function)
+
+  function addSmoothScrolling() {
+    $('a[href^="#"]').on('click', function (e) {
+      e.preventDefault();
+    
+      var targetId = $(this).attr("href");
+      $('html, body').animate({ scrollTop: $(targetId).offset().top }, 'slow');
+    });
+  }
+  
+  addSmoothScrolling();
   

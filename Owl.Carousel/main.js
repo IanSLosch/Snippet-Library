@@ -1,3 +1,4 @@
+import "owl.carousel"
 
 // MUSIC CAROUSEL
 function createMusicCarousel() {

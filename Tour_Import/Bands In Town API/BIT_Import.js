@@ -19,7 +19,7 @@
           html += '<div class="event-location">' + event.venue.location.toUpperCase() + '</div>';
           html += '<div class="event-links">';
           for (let offer of event.offers) {
-            html += '<a href="' + offer.url + '" target="_blank" class="link">' + offer.type.toUpperCase() + '</a>';
+            html += '<a href="' + offer.url + '" target="_blank" class="link btn">' + offer.type.toUpperCase() + '</a>';
           }
           html += '</div>';
           html += '</div>';
