@@ -11,10 +11,19 @@ ul.social {
       transition: all .3s ease-in-out;
 
       @include hover-focus {
-        transform: scale(1.2);
+        opacity: 0.5;
       }
 
-      i {}
+      i {
+        font-size: rems(42);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        max-width: rems(42);
+        max-height: rems(42);
+      }
     }
   }
 }

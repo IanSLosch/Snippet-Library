@@ -1,7 +1,6 @@
-nav#nav-menu {
+nav {
   display: flex;
   align-items: center;
-
   justify-content: space-between;
   margin: rems(10) 0;
 
@@ -10,7 +9,6 @@ nav#nav-menu {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: rems(30);
     padding: 0;
     margin: 0;
 
@@ -18,4 +16,24 @@ nav#nav-menu {
       a {}
     }
   }
+
+  ul#nav-menu {
+    gap: rems(30);
+
+    li {
+      a {}
+    }
+  }
+
+  h1#logo {
+    a {
+      img {}
+    }
+  }
+
+  ul.social {
+    gap: rems(20);
+  }
+
+
 }
