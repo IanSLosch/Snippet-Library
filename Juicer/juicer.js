@@ -1,76 +1,70 @@
 (function ($) {
   $.fn.juicer = function (options) {
-    const $SELECTOR = $(this);
+    const $selector = $(this);
 
-    let opts = $.extend({
+    // Default options
+    const defaults = {
       limit: 6,
-      feed_more: $('.juicer-button'),
-      btn_msg: 'View More'
-    }, options);
+      feedMoreButton: $('.juicer-button'),
+      buttonMessage: 'View More',
+    };
 
-    const init_limit = opts.limit;
+    const opts = $.extend({}, defaults, options);
+    const initialLimit = opts.limit;
 
-    opts.feed_more.on('click', function (e) {
-      if (opts.limit > 0) {
-        opts.limit = 0;
-        $(this).text('View Less');
-      } else {
-        opts.limit = init_limit;
-        $(this).text(opts.btn_msg);
-      }
-
+    // Handle the "View More/Less" button click
+    opts.feedMoreButton.on('click', function (e) {
       e.preventDefault();
+
+      opts.limit = opts.limit > 0 ? 0 : initialLimit;
+      $(this).text(opts.limit === 0 ? 'View Less' : opts.buttonMessage);
+
+      // Reload the feed with the updated limit
+      loadFeed();
     });
 
-    $.ajax({
-      url: 'https://www.juicer.io/api/feeds/thomasday',
-      method: 'GET',
-      dataType: 'json',
-      success: function (data) {
-        let c = 1;
-        let html = '';
- 
-        for (let item of data.posts.items) {
-          if (item.unformatted_message != null) {
-            var text = item.unformatted_message.replace(/<\/?[^>]+(>|$)/g, '');
-          } else {
-            var text = " ";
-          }
-          const img = item.image;
+    // Fetch and display feed data
+    function loadFeed() {
+      $.ajax({
+        url: 'https://www.juicer.io/api/feeds/thomasday',
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+          const posts = data.posts.items;
+          let html = '';
+          let count = 0;
 
-          if (img) {
+          for (const item of posts) {
+            const text = item.unformatted_message
+              ? item.unformatted_message.replace(/<\/?[^>]+(>|$)/g, '')
+              : ' ';
+            const img = item.image;
+
             html += `
-                <div>
-                    <a href="${item.full_url}" target="_blank" style="background-image: url('${img}');">
-                        <span>${text}</span>
-                    </a>
-                </div>
+              <div>
+                <a href="${item.full_url}" target="_blank" ${img ? `style="background-image: url('${img}');"` : ''}>
+                  <span ${!img ? 'style="opacity: 1;"' : ''}>${text}</span>
+                </a>
+              </div>
             `;
-          } else {
-            html += `
-                <div>
-                    <a href="${item.full_url}" target="_blank">
-                        <span style="opacity: 1;">${text}</span>
-                    </a>
-                </div>
-            `;
+
+            if (opts.limit > 0 && ++count >= opts.limit) break;
           }
 
-          if (opts.limit > 0 && c++ >= opts.limit) {
-            $SELECTOR.html(html);
-            return false;
+          $selector.html(html);
+
+          // If no limit, ensure all items are visible
+          if (opts.limit === 0) {
+            $('#feed > div').css('display', 'block');
           }
-        }
+        },
+        error: function () {
+          console.error('Error loading feed.');
+        },
+      });
+    }
 
-        $SELECTOR.html(html);
-
-        if (opts.limit === 0) {
-          $('#feed > div').css('display', 'block');
-        }
-      },
-      error: function () {
-        console.log('Error loading feed.');
-      }
-    });
+    // Initial feed load
+    loadFeed();
   };
 })(jQuery);

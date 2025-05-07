@@ -1,7 +1,6 @@
 @import "../../node_modules/owl.carousel/dist/assets/owl.carousel.min";
 @import "../../node_modules/owl.carousel/dist/assets/owl.theme.default.min";
 
-// VIDEO CAROUSEL
 #video-carousel {
   position: relative;
 
@@ -12,7 +11,6 @@
 
   .owl-nav {
 
-    // Nav Buttons
     button {
       color: $color-black;
       position: absolute;
@@ -38,56 +36,4 @@
       }
     }
   }
-}
-
-// MUSIC CAROUSEL
-#music-carousel {
-  position: relative;
-
-  // Item
-  .item {
-    .cover {
-      img {}
-    }
-
-    .info {
-      .release {}
-
-      .title {}
-
-      .btn {}
-    }
-  }
-
-  .owl-stage-outer {}
-
-  .owl-nav {
-
-    // Nav Buttons
-    button {
-      color: $color-black;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-
-      &.owl-prev {
-        left: rems(15);
-      }
-
-      &.owl-next {
-        right: rems(15);
-      }
-
-      .arrow {
-        i {
-          font-size: rems(43);
-
-          @include hover-focus {
-            transform: scale(1.1);
-          }
-        }
-      }
-    }
-  }
-
 }
