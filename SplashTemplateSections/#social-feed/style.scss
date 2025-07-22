@@ -1,0 +1,60 @@
+section#social-feed {
+  .container {
+    max-width: rems(1100);
+
+    #instagram-feed {
+      padding: 0 rems(50);
+
+      .item {
+        height: rems(520);
+
+        a {
+          color: $color-white;
+          display: block;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @include hover-focus {
+            opacity: .6;
+          }
+
+          span {
+            text-shadow: 1px 1px 2px $color-black;
+            font-size: rems(20);
+
+          }
+        }
+      }
+
+      .owl-nav {
+
+        button {
+          color: $color-black;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+
+          &.owl-prev {
+            left: 0;
+          }
+
+          &.owl-next {
+            right: 0;
+          }
+
+          .arrow {
+            i {
+              font-size: rems(28);
+
+              @include hover-focus {
+                opacity: .6;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

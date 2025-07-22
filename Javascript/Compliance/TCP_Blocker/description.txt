@@ -1,0 +1,18 @@
+
+"Our team has a suspicion that it is due to the delay in loading the videos originating from the api calls required to build the music carousel. We have applied various potential solutions to this issue and none have resolved it."
+
+=> if the youtube iframe element has a data-src attribute the video should not be loaded because the src attribute doesn't exist.
+
+how it works:
+
+when the coreFunctions is instantiated the tpcleaner will check the content of the page and check all iframe and script tag with the data-src attribute, afterward a mutationObserver will also check if there is any node update on the page and will check for iframe and script tag with a data-src on the updated node.
+
+so even if your script adds the iframe tag with the data-src on the dom tree when the page is loaded the tpcleaner should detect it.
+
+quick troubleshooting :
+
+check if the coreFunction config have a tpcDomainsToBlocksection, if its the case you can remove it,
+
+if you need to have it for a custom reason please check that the youtube domains are included.
+
+check if the iframe injected in the node/added to the page have the data-src attribute and no src attribute

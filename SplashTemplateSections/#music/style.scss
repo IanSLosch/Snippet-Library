@@ -1,0 +1,108 @@
+@import "../../node_modules/owl.carousel/dist/assets/owl.carousel.min";
+
+section#music {
+
+  .container {
+
+    h2 {
+      max-width: rems(900);
+      margin: 0 auto;
+      padding-left: rems(10);
+      text-transform: uppercase;
+      font-size: rems(48);
+      margin-bottom: rems(24);
+    }
+
+    #music-carousel {
+      position: relative;
+
+      .item {
+        display: flex;
+        max-width: rems(900);
+        margin: 0 auto;
+
+        @include tablet-down {
+          flex-direction: column;
+        }
+
+        .cover {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            @include tablet-down {
+              max-width: rems(500);
+              margin-bottom: rems(40);
+            }
+          }
+        }
+
+        .info {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          text-transform: uppercase;
+          text-align: center;
+
+          p.artist {
+            font-size: rems(24);
+            margin: 0;
+          }
+
+          h2.title {
+            font-size: rems(75);
+            margin: rems(20) 0;
+          }
+
+          p.release {
+            font-size: rems(24);
+            margin: 0 0 rems(28);
+          }
+
+          a.btn {
+            padding: rems(14) rems(42);
+            font-size: rems(28);
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      .owl-nav {
+
+        button {
+          color: $color-black;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+
+          &.owl-prev {
+            left: rems(15);
+          }
+
+          &.owl-next {
+            right: rems(15);
+          }
+
+          .arrow {
+            i {
+              font-size: rems(43);
+              transition: all .3s ease;
+
+              @include phone-down {
+                font-size: rems(30);
+              }
+
+              @include hover-focus {
+                opacity: .6;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

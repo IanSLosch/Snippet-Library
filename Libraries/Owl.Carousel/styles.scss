@@ -1,0 +1,38 @@
+@import "../../node_modules/owl.carousel/dist/assets/owl.carousel.min";
+
+#video-carousel {
+  position: relative;
+
+  // Item
+  .item {}
+
+  .owl-stage-outer {}
+
+  .owl-nav {
+
+    button {
+      color: $color-black;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &.owl-prev {
+        left: rems(15);
+      }
+
+      &.owl-next {
+        right: rems(15);
+      }
+
+      .arrow {
+        i {
+          font-size: rems(43);
+
+          @include hover-focus {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+#tour-dates {
+  .event-group {
+    display: flex;
+    gap: rems(16);
+    margin: rems(24) 0;
+
+    .event-date {
+      flex: 1;
+    }
+
+    .event-venue {
+      flex: 1;
+    }
+
+    .event-location {
+      flex: 1;
+    }
+
+    .event-links {
+      flex: 1;
+
+      a.btn {}
+    }
+  }
+}

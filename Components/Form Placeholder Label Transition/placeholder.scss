@@ -1,0 +1,33 @@
+.input-wrapper {
+				position: relative;
+				margin-bottom: 2rem;
+				max-width: rems(400);
+
+				label {
+					position: absolute;
+					left: 0;
+					top: 0.5rem;
+					font-size: rems(20);
+					color: $color-black;
+					pointer-events: none;
+					transition: all 0.3s ease;
+				}
+
+				input {
+					width: 100%;
+					padding: rems(10) 0;
+					background: transparent;
+					border: none;
+					border-bottom: 2px solid $color-black;
+					font-size: 1rem;
+					outline: none;
+
+					&:focus {
+					}
+
+					&:focus+label,
+					&:not(:placeholder-shown)+label {
+						top: -1rem;
+					}
+				}
+			}

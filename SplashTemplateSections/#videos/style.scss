@@ -1,0 +1,78 @@
+@import "../../node_modules/owl.carousel/dist/assets/owl.carousel.min";
+
+section#videos {
+  .container {
+
+    h2 {
+      max-width: rems(780);
+      margin: 0 auto;
+      text-transform: uppercase;
+      font-size: rems(48);
+      margin-bottom: rems(24);
+    }
+
+    #video-carousel {
+      .item {
+        max-width: rems(780);
+        margin: 0 auto;
+        padding: rems;
+
+        .embed-container {
+
+          iframe {}
+        }
+
+        p.video-title {
+          font-size: rems(22);
+          text-transform: uppercase;
+          margin: rems(24) 0 rems(60);
+        }
+      }
+
+      .owl-nav {
+
+        button {
+          color: $color-black;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+
+          &.owl-prev {
+            left: rems(15);
+          }
+
+          &.owl-next {
+            right: rems(15);
+          }
+
+          .arrow {
+            i {
+              font-size: rems(43);
+              transition: all .3s ease;
+
+              @include phone-down {
+                font-size: rems(30);
+              }
+
+              @include hover-focus {
+                opacity: .6;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .button-wrapper {
+      display: flex;
+      justify-content: center;
+
+      a.btn {
+        display: inline-block;
+        padding: rems(14) rems(42);
+        font-size: rems(28);
+        text-transform: uppercase;
+      }
+    }
+  }
+}
